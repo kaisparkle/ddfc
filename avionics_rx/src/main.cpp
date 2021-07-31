@@ -22,7 +22,7 @@ void loop() {
     // make sure the packet is new
     if(received_packet.timestamp != previous_packet.timestamp) {
         Serial.print("Packet ID: 0x");
-        Serial.println(received_packet.packet_id, HEX);
+        Serial.println(received_packet.packet_magic, HEX);
         Serial.print("Module ID: 0x");
         Serial.println(received_packet.module_id, HEX);
         Serial.print("Timestamp (us): ");

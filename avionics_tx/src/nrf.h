@@ -18,16 +18,16 @@
 const uint8_t PACKET_SIZE = 32;
 
 struct packet_frame {
-    // 1 byte packet identifier
-    uint8_t packet_id = 0xFF;
+    // 2 byte packet magic
+    uint16_t packet_magic = 0xA4EE;
     // 1 byte module identifier
     uint8_t module_id;
     // 4 byte microsecond timestamp
     uint32_t timestamp;
     // 1 byte data length
     uint8_t data_length;
-    // 25 byte data
-    uint8_t data[25];
+    // 24 byte data
+    uint8_t data[24];
 };
 
 // address of the modules

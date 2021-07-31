@@ -14,7 +14,7 @@ bool nrf_send(packet_frame packet) {
     
     #ifdef NRF_DEBUG
         Serial.print("Data sent: ");
-        Serial.print(packet.packet_id, HEX);
+        Serial.print(packet.packet_magic, HEX);
         Serial.print(packet.module_id, HEX);
         Serial.print(packet.timestamp, HEX);
         Serial.print(packet.data_length, HEX);
@@ -39,7 +39,7 @@ packet_frame nrf_read() {
     #ifdef NRF_DEBUG
         if(new_data == true) {
             Serial.print("Data received: ");
-            Serial.print(packet.packet_id, HEX);
+            Serial.print(packet.packet_magic, HEX);
             Serial.print(packet.module_id, HEX);
             Serial.print(packet.timestamp, HEX);
             Serial.print(packet.data_length, HEX);
