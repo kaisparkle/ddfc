@@ -25,7 +25,7 @@ void loop() {
         Serial.println(received_packet.packet_magic, HEX);
         Serial.print("Module ID: 0x");
         Serial.println(received_packet.module_id, HEX);
-        Serial.print("Timestamp (us): ");
+        Serial.print("Timestamp (ms): ");
         Serial.println(received_packet.timestamp, DEC);
         Serial.print("Listed data length (bytes): ");
         Serial.println(received_packet.data_length, DEC);

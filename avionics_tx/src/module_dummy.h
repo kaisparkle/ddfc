@@ -4,9 +4,8 @@
 #include <stdint.h>
 #include <nrf.h>
 
-#define MODULE_DUMMY_ID 0xAA
-
 packet_frame module_dummy_get();
 void module_dummy_setup();
+bool module_dummy_ready();
 
 #endif

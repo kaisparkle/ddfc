@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <SPI.h>
 
+#include <config.h>
 #include <nrf.h>
 #include <RF24.h>
 #include <nRF24L01.h>
@@ -12,7 +13,7 @@ bool nrf_send(packet_frame packet) {
     bool result;
     result = radio.write(&packet, PACKET_SIZE);
     
-    #ifdef NRF_DEBUG
+    #if NRF_DEBUG
         Serial.print("Data sent: ");
         Serial.print(packet.packet_magic, HEX);
         Serial.print(packet.module_id, HEX);
@@ -36,7 +37,7 @@ packet_frame nrf_read() {
         new_data = true;
     }
 
-    #ifdef NRF_DEBUG
+    #if NRF_DEBUG
         if(new_data == true) {
             Serial.print("Data received: ");
             Serial.print(packet.packet_magic, HEX);
@@ -65,7 +66,7 @@ void nrf_tx_setup() {
     radio.setDataRate(RF24_250KBPS);
     radio.setRetries(RETRY_DELAY, RETRY_COUNT);
     radio.openWritingPipe(address);
-    #ifdef NRF_DEBUG
+    #if NRF_DEBUG
         // dump module details
         radio.printDetails();
     #endif
@@ -83,7 +84,7 @@ void nrf_rx_setup() {
     radio.setDataRate(RF24_250KBPS);
     radio.openReadingPipe(0, address);
     radio.startListening();
-    #ifdef NRF_DEBUG
+    #if NRF_DEBUG
         // dump module details
         radio.printDetails();
     #endif

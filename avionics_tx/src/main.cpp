@@ -1,39 +1,41 @@
 #include <Arduino.h>
 #include <printf.h>
 
+#include <arming.h>
 #include <nrf.h>
 #include <module_dummy.h>
-
-unsigned long current_micros;
-unsigned long prev_micros;
+#include <module_gps.h>
 
 void setup() {
     Serial.begin(9600);
     printf_begin();
 
+    #if ARMING_ENABLE
+        // pause execution until armed
+        arming_wait();
+        // once the wait is done, inform of arming
+        arming_arm();
+    #endif
+
     nrf_tx_setup();
     module_dummy_setup();
+    module_gps_setup();
 }
 
 void loop() {
-    // store the time at loop's start
-    current_micros = micros();
-
-    if(current_micros - prev_micros >= tx_interval) {
-        // get module data
+    if(module_dummy_ready()) {
         packet_frame dummy = module_dummy_get();
-
-        // send the packet frame if we're at our tx interval
         bool result = nrf_send(dummy);
-
-        if(result) {
-            Serial.print("Time since last packet: ");
-            Serial.print(current_micros - prev_micros);
-            Serial.println("us");
-        } 
-        else {
+        if(!result) {
             Serial.println("TX failed");
         }
-        prev_micros = micros();
+    }
+
+    if(module_gps_ready()) {
+        packet_frame gps = module_gps_get();
+        bool result = nrf_send(gps);
+        if(!result) {
+            Serial.println("TX failed");
+        }
     }
 }
