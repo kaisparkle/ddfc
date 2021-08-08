@@ -1,8 +1,10 @@
+// Project: avionics_tx
+// Purpose: GPS module header
+
 #ifndef MODULE_GPS_H
 #define MODULE_GPS_H
 
 #include <Arduino.h>
-
 #include <nrf.h>
 
 // GPS data container

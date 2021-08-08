@@ -1,7 +1,9 @@
+// Project: avionics_tx
+// Purpose: Module for handling GPS data from u-blox NEO-7M
+
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <UbxGpsNavPvt.h>
-
 #include <config.h>
 #include <nrf.h>
 #include <module_gps.h>

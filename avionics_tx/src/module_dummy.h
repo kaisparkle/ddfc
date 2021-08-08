@@ -1,3 +1,6 @@
+// Project: avionics_tx
+// Purpose: Dummy module header
+
 #ifndef MODULE_DUMMY_H
 #define MODULE_DUMMY_H
 

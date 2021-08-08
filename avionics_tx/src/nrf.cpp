@@ -1,6 +1,8 @@
+// Project: avionics
+// Purpose: Module for radio transmit over NRF24L01
+
 #include <Arduino.h>
 #include <SPI.h>
-
 #include <config.h>
 #include <nrf.h>
 #include <RF24.h>
@@ -65,7 +67,7 @@ void nrf_tx_setup() {
     // 250Kbps offers the theoretically highest range
     radio.setDataRate(RF24_250KBPS);
     radio.setRetries(RETRY_DELAY, RETRY_COUNT);
-    radio.openWritingPipe(address);
+    radio.openWritingPipe(ADDRESS);
     #if NRF_DEBUG
         // dump module details
         radio.printDetails();
@@ -82,7 +84,7 @@ void nrf_rx_setup() {
 
     // 250Kbps offers the theoretically highest range
     radio.setDataRate(RF24_250KBPS);
-    radio.openReadingPipe(0, address);
+    radio.openReadingPipe(0, ADDRESS);
     radio.startListening();
     #if NRF_DEBUG
         // dump module details

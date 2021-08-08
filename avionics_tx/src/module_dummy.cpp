@@ -1,5 +1,7 @@
-#include <Arduino.h>
+// Project: avionics_tx
+// Purpose: Module for testing radio transmit with random data
 
+#include <Arduino.h>
 #include <config.h>
 #include <nrf.h>
 #include <module_dummy.h>

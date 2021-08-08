@@ -1,5 +1,7 @@
-#include <Arduino.h>
+// Project: avionics_tx
+// Purpose: Module for handling an on-board arm-once switch
 
+#include <Arduino.h>
 #include <config.h>
 #include <arming.h>
 

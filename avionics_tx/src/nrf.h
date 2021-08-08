@@ -1,3 +1,6 @@
+// Project: avionics
+// Purpose: NRF radio module header
+
 #ifndef NRF_H
 #define NRF_H
 
@@ -15,9 +18,6 @@ struct packet_frame {
     // 24 byte data
     uint8_t data[24];
 };
-
-// address of the modules
-const uint8_t address[5] = {0xe7, 0xe7, 0xe7, 0xe7, 0xe7};
 
 bool nrf_send(packet_frame packet);
 packet_frame nrf_read();

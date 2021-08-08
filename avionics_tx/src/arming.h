@@ -1,3 +1,6 @@
+// Project: avionics_tx
+// Purpose: Arming module header
+
 #ifndef ARMING_H
 #define ARMING_H
 

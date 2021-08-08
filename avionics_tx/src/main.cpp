@@ -1,6 +1,9 @@
-#include <Arduino.h>
-#include <printf.h>
+// Project: avionics_tx
+// Purpose: TX main functions, handles module data collection and transmit
 
+#include <Arduino.h>
+#include <config.h>
+#include <printf.h>
 #include <arming.h>
 #include <nrf.h>
 #include <module_dummy.h>

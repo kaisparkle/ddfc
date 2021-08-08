@@ -1,7 +1,9 @@
+// Project: avionics_rx
+// Purpose: RX main functions, handles receiving data from vehicle
+
 #include <Arduino.h>
 #include <SPI.h>
 #include <printf.h>
-
 #include <RF24.h>
 #include <nRF24L01.h>
 #include <nrf.h>
