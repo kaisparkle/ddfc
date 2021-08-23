@@ -11,7 +11,7 @@
 // define new radio
 RF24 radio(NRF_CE_PIN, NRF_CSN_PIN);
 
-bool nrf_send(packet_frame packet) {
+void nrf_send(packet_frame packet) {
     bool result;
     result = radio.write(&packet, PACKET_SIZE);
     
@@ -27,7 +27,9 @@ bool nrf_send(packet_frame packet) {
         Serial.print('\n');
     #endif
 
-    return result;
+    if(!result) {
+        Serial.println("TX failed");
+    }
 }
 
 packet_frame nrf_read() {
@@ -68,10 +70,6 @@ void nrf_tx_setup() {
     radio.setDataRate(RF24_250KBPS);
     radio.setRetries(RETRY_DELAY, RETRY_COUNT);
     radio.openWritingPipe(ADDRESS);
-    #if NRF_DEBUG
-        // dump module details
-        radio.printDetails();
-    #endif
 }
 
 void nrf_rx_setup() {
@@ -86,8 +84,4 @@ void nrf_rx_setup() {
     radio.setDataRate(RF24_250KBPS);
     radio.openReadingPipe(0, ADDRESS);
     radio.startListening();
-    #if NRF_DEBUG
-        // dump module details
-        radio.printDetails();
-    #endif
 }

@@ -8,7 +8,7 @@
 const uint8_t NRF_CE_PIN = 9;
 const uint8_t NRF_CSN_PIN = 10;
 // enables data write logging
-#define NRF_DEBUG true
+#define NRF_DEBUG false
 // retry delay in multiples of 250us
 const uint8_t RETRY_DELAY = 4;
 const uint8_t RETRY_COUNT = 5;

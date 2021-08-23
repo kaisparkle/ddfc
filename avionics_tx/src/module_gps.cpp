@@ -11,7 +11,7 @@
 // stores the time in ms from execution start when data was last fetched
 uint32_t gps_last_run_time = millis();
 
-gps_data data;
+gps_data gps_struct;
 packet_frame gps_packet;
 
 // initialize software serial to communicate with module
@@ -21,26 +21,26 @@ UbxGpsNavPvt<SoftwareSerial> gps(gps_serial);
 
 packet_frame module_gps_get() {
     // fill the data struct
-    data.year = gps.year;
-    data.month = gps.month;
-    data.day = gps.day;
-    data.hours = gps.hour;
-    data.minutes = gps.min;
-    data.seconds = gps.sec;
-    data.latitude = gps.lat;
-    data.longitude = gps.lon;
-    data.altitude = gps.hMSL;
-    data.speed = gps.gSpeed;
+    gps_struct.year = gps.year;
+    gps_struct.month = gps.month;
+    gps_struct.day = gps.day;
+    gps_struct.hours = gps.hour;
+    gps_struct.minutes = gps.min;
+    gps_struct.seconds = gps.sec;
+    gps_struct.latitude = gps.lat;
+    gps_struct.longitude = gps.lon;
+    gps_struct.altitude = gps.hMSL;
+    gps_struct.speed = gps.gSpeed;
 
     // fill packet frame
     gps_packet.module_id = MODULE_GPS_ID;
     gps_packet.timestamp = millis();
-    gps_packet.data_length = sizeof(data);
+    gps_packet.data_length = sizeof(gps_struct);
 
     // iterate through each byte in the GPS struct and add it to data
-    uint8_t* struct_ptr = (uint8_t*)&data;
-    for(uint8_t i = 0; i < sizeof(data); i++) {
-        gps_packet.data[i] = *struct_ptr++;
+    uint8_t* gps_struct_ptr = (uint8_t*)&gps_struct;
+    for(uint8_t i = 0; i < sizeof(gps_struct); i++) {
+        gps_packet.data[i] = *gps_struct_ptr++;
     }
 
     // update the time

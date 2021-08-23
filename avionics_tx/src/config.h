@@ -5,7 +5,7 @@
 #define CONFIG_H
 
 // arming
-#define ARMING_ENABLE true
+#define ARMING_ENABLE false
 const uint8_t ARMING_SWITCH_PIN = 2;
 const uint8_t ARMING_LED_PIN = LED_BUILTIN;
 // delay in seconds until armed
@@ -25,15 +25,20 @@ const uint8_t PACKET_SIZE = 32;
 const uint8_t ADDRESS[5] = {0xe7, 0xe7, 0xe7, 0xe7, 0xe7};
 
 // dummy module
-const uint8_t MODULE_DUMMY_ID = 0x0A;
+const uint8_t MODULE_DUMMY_ID = 0x00;
 const uint16_t DUMMY_FETCH_INTERVAL = 500;
 
 // GPS module
-const uint8_t MODULE_GPS_ID = 0x0B;
+const uint8_t MODULE_GPS_ID = 0x01;
 const uint8_t GPS_TX_PIN = 7;
 const uint8_t GPS_RX_PIN = 8;
 // minimum interval between data fetches in milliseconds
 // NEO-7M running at 5Hz
 const uint16_t GPS_FETCH_INTERVAL = 200;
+
+// BMP module
+// running at 10Hz
+const uint8_t MODULE_BMP_ID = 0x02;
+const uint16_t BMP_FETCH_INTERVAL = 100;
 
 #endif

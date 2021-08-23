@@ -19,7 +19,7 @@ struct packet_frame {
     uint8_t data[24];
 };
 
-bool nrf_send(packet_frame packet);
+void nrf_send(packet_frame packet);
 packet_frame nrf_read();
 void nrf_tx_setup();
 void nrf_rx_setup();
