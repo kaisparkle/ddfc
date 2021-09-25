@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: Module for testing radio transmit with random data
 
 #include <Arduino.h>

@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: Module for handling pressure and temp data from BMP180
 
 #include <Arduino.h>

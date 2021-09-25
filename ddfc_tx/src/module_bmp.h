@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: BMP module header
 
 #ifndef MODULE_BMP_H

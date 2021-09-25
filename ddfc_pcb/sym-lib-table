@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name bmp180_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/bmp180_breakout.lib)(options "")(descr ""))
+  (lib (name neo-7m_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/neo-7m_breakout.lib)(options "")(descr ""))
+  (lib (name mpu6050_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/mpu6050_breakout.lib)(options "")(descr ""))
+  (lib (name hmc5883l_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/hmc5883l_breakout.lib)(options "")(descr ""))
+  (lib (name microsd_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/microsd_breakout.lib)(options "")(descr ""))
+  (lib (name nrf24l01+_breakout)(type Legacy)(uri ${KIPRJMOD}/libs/nrf24l01+_breakout.lib)(options "")(descr ""))
+)

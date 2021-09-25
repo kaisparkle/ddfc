@@ -1,4 +1,4 @@
-// Project: avionics_rx
+// Project: ddfc_fx
 // Purpose: RX main functions, handles receiving data from vehicle
 
 #include <Arduino.h>

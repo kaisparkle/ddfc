@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: GPS module header
 
 #ifndef MODULE_GPS_H

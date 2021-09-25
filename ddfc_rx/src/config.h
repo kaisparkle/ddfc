@@ -1,5 +1,5 @@
-// Project: avionics
-// Purpose: Configuration constants for various modules
+// Project: ddfc_rx
+// Purpose: Configuration constants for modules
 
 #ifndef CONFIG_H
 #define CONFIG_H

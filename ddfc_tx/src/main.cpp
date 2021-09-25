@@ -1,9 +1,8 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: TX main functions, handles module data collection and transmit
 
 #include <Arduino.h>
 #include <config.h>
-#include <arming.h>
 #include <nrf.h>
 #include <module_dummy.h>
 #include <module_gps.h>
@@ -11,13 +10,6 @@
 
 void setup() {
     Serial.begin(9600);
-
-    #if ARMING_ENABLE
-        // pause execution until armed
-        arming_wait();
-        // once the wait is done, inform of arming
-        arming_arm();
-    #endif
 
     nrf_tx_setup();
     module_dummy_setup();

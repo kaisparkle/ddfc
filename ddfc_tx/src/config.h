@@ -1,15 +1,8 @@
-// Project: avionics
-// Purpose: Configuration constants for various modules
+// Project: ddfc_tx
+// Purpose: Configuration constants for modules
 
 #ifndef CONFIG_H
 #define CONFIG_H
-
-// arming
-#define ARMING_ENABLE false
-const uint8_t ARMING_SWITCH_PIN = 2;
-const uint8_t ARMING_LED_PIN = LED_BUILTIN;
-// delay in seconds until armed
-const uint8_t ARMING_DELAY = 5;
 
 // NRF
 const uint8_t NRF_CE_PIN = 9;

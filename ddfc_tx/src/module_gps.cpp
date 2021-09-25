@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: Module for handling GPS data from u-blox NEO-7M
 
 #include <Arduino.h>

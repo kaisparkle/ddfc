@@ -1,4 +1,4 @@
-// Project: avionics_tx
+// Project: ddfc_tx
 // Purpose: Dummy module header
 
 #ifndef MODULE_DUMMY_H
