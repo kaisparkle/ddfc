@@ -1,10 +1,10 @@
-// Project: ddfc_tx
+// Project: ddfc_telem
 // Purpose: Module for handling pressure and temp data from BMP180
 
 #include <Arduino.h>
 #include <Adafruit_BMP085.h>
 #include <module_bmp.h>
-#include <nrf.h>
+#include <packet.h>
 #include <config.h>
 
 // stores the time in ms from execution start when data was last fetched

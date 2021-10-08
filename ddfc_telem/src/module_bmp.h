@@ -1,11 +1,11 @@
-// Project: ddfc_tx
+// Project: ddfc_telem
 // Purpose: BMP module header
 
 #ifndef MODULE_BMP_H
 #define MODULE_BMP_H
 
 #include <Arduino.h>
-#include <nrf.h>
+#include <packet.h>
 
 struct bmp_data {
     float temperature;

@@ -1,11 +1,11 @@
-// Project: ddfc_tx
+// Project: ddfc_navrec
 // Purpose: GPS module header
 
 #ifndef MODULE_GPS_H
 #define MODULE_GPS_H
 
 #include <Arduino.h>
-#include <nrf.h>
+#include <packet.h>
 
 // GPS data container
 struct gps_data {

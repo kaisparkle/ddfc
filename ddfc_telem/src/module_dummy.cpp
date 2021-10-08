@@ -1,9 +1,9 @@
-// Project: ddfc_tx
+// Project: ddfc_telem
 // Purpose: Module for testing radio transmit with random data
 
 #include <Arduino.h>
 #include <config.h>
-#include <nrf.h>
+#include <packet.h>
 #include <module_dummy.h>
 
 uint32_t dummy_last_run_time = millis();

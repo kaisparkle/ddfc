@@ -1,11 +1,11 @@
-// Project: ddfc_tx
+// Project: ddfc_navrec
 // Purpose: Module for handling GPS data from u-blox NEO-7M
 
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <UbxGpsNavPvt.h>
 #include <config.h>
-#include <nrf.h>
+#include <packet.h>
 #include <module_gps.h>
 
 // stores the time in ms from execution start when data was last fetched
@@ -31,6 +31,17 @@ packet_frame module_gps_get() {
     gps_struct.longitude = gps.lon;
     gps_struct.altitude = gps.hMSL;
     gps_struct.speed = gps.gSpeed;
+
+    #if GPS_DEBUG
+    Serial.print("Lat: ");
+    Serial.println(gps_struct.latitude);
+    Serial.print("Lon: ");
+    Serial.println(gps_struct.longitude);
+    Serial.print("Altitude: ");
+    Serial.println(gps_struct.altitude);
+    Serial.print("Ground speed: ");
+    Serial.println(gps_struct.speed);
+    #endif
 
     // fill packet frame
     gps_packet.module_id = MODULE_GPS_ID;

@@ -1,10 +1,10 @@
-// Project: ddfc
-// Purpose: NRF radio module header
+// Project: ddfc_navrec
+// Purpose: Defines packet frame struct
 
-#ifndef NRF_H
-#define NRF_H
+#ifndef PACKET_H
+#define PACKET_H
 
-#include <stdint.h>
+#include <Arduino.h>
 
 struct packet_frame {
     // 2 byte packet magic
@@ -18,10 +18,5 @@ struct packet_frame {
     // 24 byte data
     uint8_t data[24];
 };
-
-void nrf_send(packet_frame packet);
-packet_frame nrf_read();
-void nrf_tx_setup();
-void nrf_rx_setup();
 
 #endif

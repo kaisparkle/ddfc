@@ -45,7 +45,7 @@ void nrf_tx_setup() {
     radio.begin();
 
     // for bench use
-    radio.setPALevel(RF24_PA_LOW);
+    radio.setPALevel(RF24_PA_MAX);
     radio.setChannel(0);
 
     // 250Kbps offers the theoretically highest range
@@ -58,7 +58,7 @@ void nrf_rx_setup() {
     radio.begin();
 
     // for bench use
-    radio.setPALevel(RF24_PA_LOW);
+    radio.setPALevel(RF24_PA_MAX);
     radio.setChannel(0);
 
     // 250Kbps offers the theoretically highest range

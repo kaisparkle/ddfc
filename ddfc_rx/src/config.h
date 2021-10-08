@@ -5,8 +5,8 @@
 #define CONFIG_H
 
 // NRF
-const uint8_t NRF_CE_PIN = 9;
-const uint8_t NRF_CSN_PIN = 10;
+const uint8_t NRF_CE_PIN = 7;
+const uint8_t NRF_CSN_PIN = 8;
 // enables data write logging
 #define NRF_DEBUG false
 // retry delay in multiples of 250us
