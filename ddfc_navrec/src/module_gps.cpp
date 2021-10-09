@@ -67,6 +67,7 @@ void module_gps_setup() {
 
 bool module_gps_ready() {
     if(!gps.ready()) {
+        Serial.println("GPS not ready");
         return false;
     }
     // check if the fetch interval has been met

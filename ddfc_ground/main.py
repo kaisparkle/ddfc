@@ -5,7 +5,7 @@ import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 
 # instantiate serial reader
-reader = serial_read.SerialReader("COM5")
+reader = serial_read.SerialReader("/dev/ttyACM0")
 
 # BMP plot
 bmp_fig = plot.figure()

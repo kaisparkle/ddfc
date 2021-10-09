@@ -28,6 +28,19 @@ class SerialReader:
             "timestamp": 0
         }
 
+        self.__gps_data = {
+            "year": 0,
+            "month": 0,
+            "day": 0,
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 0,
+            "latitude": 0.0,
+            "longitude": 0.0,
+            "altitude": 0.0,
+            "speed": 0.0
+        }
+
     def run(self):
         # pyserial will block until new data is received, so just loop
         while True:
@@ -61,6 +74,10 @@ class SerialReader:
                     print(f"Temperature: {self.__bmp_data['temperature']:.2f} degrees Celsius\n"
                           f"Pressure: {self.__bmp_data['pressure']} Pascal\n"
                           f"Altitude from pad: {self.__bmp_data['altitude_from_pad']:.2f} meters\n")
+
+                # GPS
+                if self.__packet_frame['module_id'] == self.__MODULE_GPS_ID:
+                    print("GPS:" + hex(self.__packet_frame['data']))
 
     def get_bmp_pressure(self):
         return self.__bmp_data['pressure']

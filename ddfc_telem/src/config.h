@@ -32,4 +32,8 @@ const uint8_t MODULE_MPU_ID = 0x04;
 const uint16_t HMC_FETCH_INTERVAL = 100;
 const uint16_t MPU_FETCH_INTERVAL = 100;
 
+// I2C
+const uint8_t I2C_MASTER_ADDRESS = 1;
+const uint8_t I2C_SLAVE_ADDRESS = 2;
+
 #endif

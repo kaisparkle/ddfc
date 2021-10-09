@@ -16,4 +16,8 @@ const uint8_t GPS_RX_PIN = 6;
 const uint16_t GPS_FETCH_INTERVAL = 1000;
 #define GPS_DEBUG true
 
+// I2C
+const uint8_t I2C_MASTER_ADDRESS = 1;
+const uint8_t I2C_SLAVE_ADDRESS = 2;
+
 #endif
