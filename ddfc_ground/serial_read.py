@@ -8,6 +8,8 @@ class SerialReader:
         # open serial port
         self.receiver = serial.Serial(port, 115200)
 
+        self.packet_count = 0
+
         # module IDs
         self.__MODULE_DUMMY_ID = 0
         self.__MODULE_GPS_ID = 1
@@ -67,6 +69,7 @@ class SerialReader:
         log_file = open("pyflightdata.dat", "a")
         log_file.write("Flight Data:\n")
         log_file.close()
+
         # pyserial will block until new data is received, so just loop
         while True:
             # do nothing until the first magic byte is found
@@ -75,6 +78,9 @@ class SerialReader:
 
             # make sure the next byte corresponds to the second packet magic byte
             if self.receiver.read() == b'\xa4':
+                # increment packet counter
+                self.packet_count += 1
+
                 # ingest each section
                 packet = self.receiver.read(30)
                 self.__packet_frame = {
@@ -166,3 +172,6 @@ class SerialReader:
 
     def get_bmp_timestamp(self):
         return self.__bmp_data['timestamp']
+
+    def get_packet_count(self):
+        return self.packet_count

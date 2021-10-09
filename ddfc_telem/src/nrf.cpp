@@ -25,11 +25,11 @@ void nrf_send(packet_frame packet) {
             Serial.print(packet.data[i], HEX);
         }
         Serial.print('\n');
-    #endif
 
     if(!result) {
         Serial.println("TX failed");
     }
+    #endif
 }
 
 packet_frame nrf_read() {

@@ -8,7 +8,7 @@
 const uint8_t NRF_CE_PIN = 7;
 const uint8_t NRF_CSN_PIN = 8;
 // enables data write logging
-#define NRF_DEBUG true
+#define NRF_DEBUG false
 // retry delay in multiples of 250us
 const uint8_t RETRY_DELAY = 4;
 const uint8_t RETRY_COUNT = 5;
@@ -22,15 +22,14 @@ const uint8_t MODULE_DUMMY_ID = 0x00;
 const uint16_t DUMMY_FETCH_INTERVAL = 500;
 
 // BMP module
-// running at 10Hz
 const uint8_t MODULE_BMP_ID = 0x02;
-const uint16_t BMP_FETCH_INTERVAL = 100;
+const uint16_t BMP_FETCH_INTERVAL = 50;
 
 // IMU modules
 const uint8_t MODULE_HMC_ID = 0x03;
 const uint8_t MODULE_MPU_ID = 0x04;
-const uint16_t HMC_FETCH_INTERVAL = 100;
-const uint16_t MPU_FETCH_INTERVAL = 100;
+const uint16_t HMC_FETCH_INTERVAL = 50;
+const uint16_t MPU_FETCH_INTERVAL = 50;
 
 // I2C
 const uint8_t I2C_MASTER_ADDRESS = 1;
