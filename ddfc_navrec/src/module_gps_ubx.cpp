@@ -6,7 +6,7 @@
 #include <UbxGpsNavPvt.h>
 #include <config.h>
 #include <packet.h>
-#include <module_gps.h>
+#include <module_gps_ubx.h>
 
 // stores the time in ms from execution start when data was last fetched
 uint32_t gps_last_run_time = millis();
@@ -67,7 +67,6 @@ void module_gps_setup() {
 
 bool module_gps_ready() {
     if(!gps.ready()) {
-        Serial.println("GPS not ready");
         return false;
     }
     // check if the fetch interval has been met

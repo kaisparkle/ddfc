@@ -10,7 +10,7 @@
 // GPS data container
 struct gps_data {
     // date variables
-    uint8_t year;
+    uint16_t year;
     uint8_t month;
     uint8_t day;
     // time variables
@@ -18,10 +18,10 @@ struct gps_data {
     uint8_t minutes;
     uint8_t seconds;
     // position
-    float latitude; // deg
-    float longitude; // deg
-    float altitude; // mm above mean sea level
-    float speed; // mm per sec ground speed
+    long latitude; // deg 1e-7
+    long longitude; // deg 1e-7
+    long altitude; // mm above mean sea level
+    long speed; // mm per sec ground speed
 };
 
 packet_frame module_gps_get();

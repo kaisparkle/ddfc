@@ -25,6 +25,7 @@ void loop() {
         packet_frame received = i2c_get();
         nrf_send(received);
     }
+    
     if(module_bmp_ready()) {
         packet_frame bmp = module_bmp_get();
         nrf_send(bmp);

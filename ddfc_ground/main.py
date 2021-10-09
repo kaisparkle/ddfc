@@ -5,7 +5,7 @@ import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 
 # instantiate serial reader
-reader = serial_read.SerialReader("/dev/ttyACM0")
+reader = serial_read.SerialReader("COM5")
 
 # BMP plot
 bmp_fig = plot.figure()
@@ -17,7 +17,7 @@ y_values = []
 def bmp_animate(i, x_list, y_list):
     # convert millisecond timestamp to seconds for plot
     x_list.append(reader.get_bmp_timestamp() / 1000)
-    y_list.append(reader.get_bmp_pressure())
+    y_list.append(reader.get_bmp_altitude())
 
     x_list = x_list[-500:]
     y_list = y_list[-500:]
@@ -27,8 +27,8 @@ def bmp_animate(i, x_list, y_list):
 
     plot.xticks(rotation=45, ha="right")
     plot.subplots_adjust(bottom=0.30)
-    plot.title("BMP180 Pressure over Time Since Execution")
-    plot.ylabel("Pressure (Pa)")
+    plot.title("BMP180 Altitude over Time Since Execution")
+    plot.ylabel("Est. Altitude (m)")
 
 
 if __name__ == "__main__":

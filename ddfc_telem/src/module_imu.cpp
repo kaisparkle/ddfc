@@ -65,9 +65,9 @@ packet_frame module_imu_mpu_get() {
     mpu_struct.accelerometer.x = mpu_event_accel.acceleration.x;
     mpu_struct.accelerometer.y = mpu_event_accel.acceleration.y;
     mpu_struct.accelerometer.z = mpu_event_accel.acceleration.z;
-    mpu_struct.gyroscope.x = mpu_event_accel.gyro.x;
-    mpu_struct.gyroscope.y = mpu_event_accel.gyro.y;
-    mpu_struct.gyroscope.z = mpu_event_accel.gyro.z;
+    mpu_struct.gyroscope.x = mpu_event_gyro.gyro.x;
+    mpu_struct.gyroscope.y = mpu_event_gyro.gyro.y;
+    mpu_struct.gyroscope.z = mpu_event_gyro.gyro.z;
 
     // fill packet frame
     mpu_packet.module_id = MODULE_MPU_ID;
